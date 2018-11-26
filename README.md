@@ -2,6 +2,17 @@ why
 ---
 
 ```diff
+-        let end64 : i64 = i64::from( user.end );
+-        let u_end = NaiveDateTime::from_timestamp(end64, 0);
+-        let d_end = DateTime::<Utc>::from_utc(u_end, Utc);
+-        let duration = d_end.signed_duration_since(Local::now());
++        letrec!( end64    = i64::from( user.end ) : i64
++               , u_end    = NaiveDateTime::from_timestamp(end64, 0)
++               , d_end    = DateTime::<Utc>::from_utc(u_end, Utc)
++               , duration = d_end.signed_duration_since(Local::now()) );
+```
+
+```diff
  pub fn activate(license_key : &String) -> String {
 -  let provided = CString::new(license_key.as_str()).unwrap();
 -  let provided_ptr = provided.as_ptr();
