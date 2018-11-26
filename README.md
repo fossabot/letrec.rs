@@ -39,6 +39,7 @@ why
 notes
 -----
 
+ - it's not recursive let, it's `let*` in terms of scheme but I can't call macro that way, that's why name is missleading
  - type specifiers on lhs will not work, I'd like it to be moved to rhs so please use `#![feature(type_ascription)]` possible way to have it done is `$(: $t:ty)*` after `$lhs:ident`
  - using macros for stylistic changes is not welcomed usually
  - not very good in debugging (but not fully sure)
