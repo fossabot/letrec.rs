@@ -1,13 +1,7 @@
-# letrec.rs
+why
+---
 
-notes
------
-
- - type specifiers on lhs will not work, I'd like it to be moved to rhs so please use `#![feature(type_ascription)]` possible way to have it done is `$(: $t:ty)*` after `$lhs:ident`
- - using macros for stylistic changes is not welcomed usually
- - not very good in debugging (but not fully sure)
-
-```rust
+```diff
  pub fn activate(license_key : &String) -> String {
 -  let provided = CString::new(license_key.as_str()).unwrap();
 -  let provided_ptr = provided.as_ptr();
@@ -30,6 +24,13 @@ notes
 +  str_slice.to_owned() : String
  }
 ```
+
+notes
+-----
+
+ - type specifiers on lhs will not work, I'd like it to be moved to rhs so please use `#![feature(type_ascription)]` possible way to have it done is `$(: $t:ty)*` after `$lhs:ident`
+ - using macros for stylistic changes is not welcomed usually
+ - not very good in debugging (but not fully sure)
 
 code
 ----
